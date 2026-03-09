@@ -9,7 +9,7 @@ const { Server } = require('socket.io');
 const agentRoutes = require('./routes/agentRoutes');
 const authRoutes = require('./routes/authRoutes');
 const leadRoutes = require('./routes/leadRoutes');
-const dashboardRoutes = require('./routes/dashboardRoutes'); // Note: fixed capitalization from your earlier snippet
+const dashboardRoutes = require('./routes/dashboardRoutes'); 
 const messageRoutes = require('./routes/messageRoutes');
 
 // Initialize Express App
@@ -47,8 +47,6 @@ const io = new Server(server, {
 // Map to track online users (UserId -> SocketId)
 const onlineUsers = new Map();
 
-// --- THE CRUCIAL BRIDGE ---
-// Attach io and onlineUsers to the Express app so controllers can use them
 app.set('io', io);
 app.set('onlineUsers', onlineUsers);
 
